@@ -1,0 +1,7 @@
+<p>Dear {{ user.username }}</p>
+<p>Welcome to <b>718Digital</b></p>
+<p>To confirm your account please <a href="{{ url_for('auth.confirm', token=token, _external=True) }}">click here.</a></p> 
+<p>Alternativly, you cant paste the below link into the browser's address bar:</p>
+<p>{{ url_for('auth.confirm', token=token, _external=True) }}</p>
+
+<p>718 Crew</p>

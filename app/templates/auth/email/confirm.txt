@@ -1,0 +1,12 @@
+Yo {{ user. username}}!
+
+Welcome to 718Digital!
+
+TO confirm your email just click on the below link:
+
+{{ url_for('auth.confirm', token=token, _external=True) }}
+
+Thx,
+
+718 Admin
+

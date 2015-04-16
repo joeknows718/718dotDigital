@@ -1,0 +1,7 @@
+<p>Yo {{ user.username }}</p>
+<p>To change your email <a href="{{ url_for('auth.change_email', token=token, _external=True) }}">click here</a>.</p>
+<p>Alternatly you can paste the below link into your browser URL bar:</p>
+<p>{{ url_for('auth.change_email', token=token, _external=True) }}</p>
+<p>If you did not request a password reset ignore this.</p>
+
+<p>718 Digital</p>

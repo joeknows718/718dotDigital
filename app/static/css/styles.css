@@ -1,0 +1,13 @@
+.profile-thumbnail{
+	position: absolute;
+}
+.profile.header {
+	min-height: 260px;
+	margin-left: 280px;
+}
+.blog-wrapper{
+	margin: 50px;
+}
+.blog-wrapper li{
+	text-decoration: none;
+}

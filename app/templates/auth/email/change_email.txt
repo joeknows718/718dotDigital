@@ -1,0 +1,6 @@
+Yo {{ user.username}}
+
+To confirm your new email address click the below link:
+{{ url_for('change_email', token=token, _external=True)}}
+
+Team 718
