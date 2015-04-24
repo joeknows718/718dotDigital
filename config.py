@@ -22,6 +22,9 @@ class Config:
 	MAIL_USERNAME = 'joeknows718@gmail.com'#os.environ.get('MAIL_USERNAME')
 	MAIL_PASSWORD = mail_pass #os.environ.get('MAIL_PASSWORD')
 	ADMIN = "joeknows718@gmail.com"
+	POSTS_PER_PAGE = 10
+	FOLLOWERS_PER_PAGE = 10
+	COMMENTS_PER_PAGE = 20
 	@staticmethod
 	def init_app(app):
 		pass 

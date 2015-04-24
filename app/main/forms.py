@@ -3,10 +3,12 @@ from wtforms import StringField, SubmitField, TextAreaField, BooleanField, Selec
 from wtforms.validators import Required, Length, Email, Regexp
 from wtforms import ValidationError
 from ..models import User, Role
+from flask.ext.pagedown.fields import PageDownField
 
 class NameForm(Form):
 	name = StringField('What is your name?', validators=[Required()])
 	submit = SubmitField('Submit')
+
 
 class EditProfileForm(Form):
 	name = StringField('Your Name', validators=[Length(0, 64)])	
@@ -14,10 +16,17 @@ class EditProfileForm(Form):
 	about_me = TextAreaField('About Me')
 	submit = SubmitField('Submit')
 
+
 class EditProfileAdminForm(Form):
-	email = StringField('Email', validators=[Required(), Length(1, 64), Email()])
-	username = StringField('Username', validators=[Required(), Length(1, 64), Regexp('^[A-Za-z][A-Za-z0-9_.]*$', 0,
-                                          'Usernames must have only letters, numbers, dots or underscores')])
+	email = StringField('Email',
+						validators=[Required(),
+						Length(1, 64), 
+						Email()])
+	username = StringField('Username',
+							validators=[Required(),
+							Length(1, 64),
+							Regexp('^[A-Za-z][A-Za-z0-9_.]*$',0,
+					    	'Usernames must have only letters, numbers, dots or underscores')])
 	confirmed = BooleanField('Confirmed')
 	role = SelectField('Role', coerce=int)
 	name = StringField('Name', validators=[Length(0, 64)])
@@ -41,6 +50,11 @@ class EditProfileAdminForm(Form):
 
 class PostForm(Form):
 	title = StringField('Post Title', validators=[Required()])
-	body = TextAreaField('What is on your mind?', validators=[Required()])
+	body = PageDownField('What is on your mind?', validators=[Required()])
+	submit = SubmitField('Submit')
+	
+
+class CommentForm(Form):
+	body = StringField('', validators=[Required()])
 	submit = SubmitField('Submit')
 	
